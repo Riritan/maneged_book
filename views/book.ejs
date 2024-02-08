@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book menu</menu>
+    </title>
+
+    <h1>책메뉴~~</h1>
+</head>
+
+<body>
+    <form action="/book" method="get">
+        <label for="bookSearch">메뉴 검색:</label>
+        <input type="text" id="menuSearch" name="menuSearch" placeholder="메뉴명을 입력하세요" value="<%= searchData %>">
+        <input type="submit" value="검색">
+    </form>
+    <table style="text-align: center;">
+
+
+        <thead>
+            <tr>
+                <th>책제목</th>
+                <th>출판사</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0; i < data.length; i++) { %>
+                <tr>
+                    <td><a href="/book/<%= data[i].book_no %>">
+                            <%= data[i].book_name %>
+                        </a></td>
+
+                    <td>
+                        <%= data[i].book_publ %>
+                    </td>
+                    <td>
+                        <form action="/addtocart" method="post">
+                            <input type="hidden" name="book_no" value="<%= data[i].book_no %>">
+                            <input type="submit" value="장바구니 담기">
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <a href="/cart">장바구니</a>
+
+
+</body>
+
+</html>

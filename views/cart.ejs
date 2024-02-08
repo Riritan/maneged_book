@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+</head>
+<body>
+    <h1>장바구니</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>순번</th>
+                <th>책이름</th>
+                <th>개수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cartList.forEach((item, idx) => { %>
+                <tr>
+                    <td><%= idx + 1 %></td>
+                    <td><%= item.bookcartlist_bookname %></td>
+                    <td><%= item.bookcartlist_count %></td>
+                    <td>
+                        <form action="/cart" method="post">
+                            <input type="hidden" value="<%= item.bookcartlistid %>" name="cartItemId">
+                            <input type="submit" value="X">
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/book">책 목록</a>
+</body>
+</html>

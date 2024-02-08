@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원검색</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>회원검색</h1>
+
+    <div class="search-page">
+        <form action="/usersearch" method="post" class="search-form">
+            <input type="text" class="search-bar" name="search_word" placeholder="검색어를 입력하세요." autofocus>
+            <input type="submit" class="search-button" value="Search">
+        </form>
+    </div>
+
+    <div class="search-results">
+      <% if (userList && userList.length > 0) { %>
+        <h2>검색 결과</h2>
+        <ul>
+          <% userList.forEach(user => { %>
+            <li>
+              <strong>아이디:</strong> <%= user.id %><br>
+              <strong>이름:</strong> <%= user.name %><br> 
+              <strong>전화번호:</strong> <%= user.tel%><br> 
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>검색 결과가 없습니다.</p>
+      <% } %>
+  </div>
+</body>
+</html>

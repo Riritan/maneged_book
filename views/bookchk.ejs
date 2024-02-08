@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookchk</title>
+</head>
+<body>
+    <h1>책목록</h1>
+    <ul>
+        <% books.forEach(user => { %>
+          <li><%= user.book_no %> -<%= user.book_name %>-<%= user.book_publ %>-<%= user.book_author %> </li>
+        <% }); %>
+      </ul>
+</body>
+</html>

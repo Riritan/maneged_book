@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-check</title>
+</head>
+<body>
+
+
+<h1>회원목록</h1>
+
+<ul>
+    <% users.forEach(user => { %>
+      <li><%= user.id %> -   <%= user.pw %>-<%= user.name %> - <%= user.birth %> - <%= user.tel %></li>
+    <% }); %>
+  </ul>
+<!-- <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>Birth</th>
+            <th>Tel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.pw %></td>
+                <td><%= user.name %></td>
+                <td><%= user.birth %></td>
+                <td><%= user.tel %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table> -->
+
+
+    
+</body>
+</html>
