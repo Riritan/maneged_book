@@ -25,6 +25,7 @@
               <strong>도서명:</strong> <%= book.book_name %><br>
               <strong>저자:</strong> <%= book.book_author %><br> 
               <strong>출판사:</strong> <%= book.book_publ%><br> 
+              <strong>대출 여부:</strong> <% if (book.book_on === 0) { %>대출 가능<% } else { %>대출 불가<% } %><br>
             </li>
           <% }); %>
         </ul>

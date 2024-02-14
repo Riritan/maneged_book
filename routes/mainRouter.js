@@ -25,6 +25,8 @@ router.get('/bookcart',mainRouter.output.bookcart);
 router.post('/addtocart',mainRouter.input.addtocart);
 router.get('/cart', mainRouter.output.cartView);
 router.post('/cart', mainRouter.input.cart);
+router.get('/rental',mainRouter.output.rental);
+router.post('/rental', mainRouter.input.rental);
 
 
 module.exports = router;

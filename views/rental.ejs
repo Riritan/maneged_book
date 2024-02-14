@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Page</title>
+</head>
+
+<body>
+    <h1>대여 페이지</h1>
+
+    <div>
+        <% if (cartItems.length> 0) { %>
+            <thead>
+                <tr>
+                    <th>책이름</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for (const cartItem of cartItems) {%>
+                    <td>
+                        <%= cartItem.bookcartlist_bookname %>
+                    </td>
+                    <% } %>
+            </tbody>
+            </table>
+            <% } %>
+    </div>
+    <form action="/rental" method="post">
+        <button type="submit"> 대출하기</button>
+    </form>
+    
+
+
+    <!-- 
+    <% if (cartItems.length > 0) { %>
+        <h2>장바구니 목록</h2>
+        <ul>
+            <% cartItems.forEach(item => { %>
+                <li><%= item.bookcartlist_bookname %></li>
+            <% }) %>
+        </ul>
+        <p>총 권수: <%= totalCount %></p>
+        <p>오늘 날짜: <%= currentDate %></p>
+    <% } else { %>
+        <p>장바구니가 비어 있습니다.</p>
+    <% } %> -->
+</body>
+
+</html>

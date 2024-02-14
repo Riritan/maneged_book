@@ -13,6 +13,7 @@
                 <th>순번</th>
                 <th>책이름</th>
                 <th>개수</th>
+                <th>작가</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                     <td><%= idx + 1 %></td>
                     <td><%= item.bookcartlist_bookname %></td>
                     <td><%= item.bookcartlist_count %></td>
+                    <td><%= item.bookcartlist_author %></td>
                     <td>
                         <form action="/cart" method="post">
                             <input type="hidden" value="<%= item.bookcartlistid %>" name="cartItemId">
@@ -31,6 +33,7 @@
             <% }) %>
         </tbody>
     </table>
+    <a href="/rental">대출하기</a>
     <a href="/book">책 목록</a>
 </body>
 </html>

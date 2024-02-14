@@ -7,7 +7,7 @@
     <title>book menu</menu>
     </title>
 
-    <h1>책메뉴~~</h1>
+    <h1>책메뉴</h1>
 </head>
 
 <body>
@@ -23,6 +23,8 @@
             <tr>
                 <th>책제목</th>
                 <th>출판사</th>
+                <th>작가</th>
+                <th>ISBN</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +36,14 @@
 
                     <td>
                         <%= data[i].book_publ %>
+                    </td>
+
+                    <td>
+                        <%= data[i].book_author %>
+                    </td>
+
+                    <td>
+                        <%= data[i].book_ISBN %>
                     </td>
                     <td>
                         <form action="/addtocart" method="post">
